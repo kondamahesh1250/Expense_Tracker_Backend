@@ -1,8 +1,9 @@
-const expenseModel = require("../model/expenseSchema");
+const expenseModel = require("../model/expenseSchema.js");
 
 const postExpense = async (req, res) => {
     try {
         const { amount, category, description, date } = req.body;
+        console.log(amount)
         const expense = await expenseModel.create({
             amount: Number(amount),
             category: category,
